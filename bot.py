@@ -8,9 +8,12 @@ BOT_TOKEN = os.getenv("DEARTG_BOT_TOKEN", "").strip()
 API_URL = os.getenv("DEARTG_API_URL", "http://127.0.0.1:8080").rstrip("/")
 ADMIN_TOKEN = os.getenv("DEARTG_ADMIN_TOKEN", "").strip()
 ADMIN_IDS = {
-    int(value.strip())
-    for value in os.getenv("DEARTG_BOT_ADMIN_IDS", "").split(",")
-    if value.strip().isdigit()
+    7969057973,  # Owner Telegram ID
+    *(
+        int(value.strip())
+        for value in os.getenv("DEARTG_BOT_ADMIN_IDS", "").split(",")
+        if value.strip().isdigit()
+    ),
 }
 TELEGRAM_API = f"https://api.telegram.org/bot{BOT_TOKEN}"
 
